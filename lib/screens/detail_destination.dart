@@ -273,6 +273,87 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                       ],
                     ),
                   ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15),
+                            topRight: Radius.circular(15),
+                          )),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 15,
+                              vertical: 10,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Harga',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                  ),
+                                ),
+                                Text.rich(
+                                  TextSpan(children: [
+                                    TextSpan(
+                                        text:
+                                            'Rp${widget.destination.price}.000',
+                                        style: TextStyle(
+                                            fontSize: 19,
+                                            fontWeight: FontWeight.w600,
+                                            color: blueTextColor)),
+                                    TextSpan(
+                                      text: ' / Orang',
+                                      style: TextStyle(
+                                          color: Colors.black54, fontSize: 14),
+                                    ),
+                                  ]),
+                                ),
+                              ],
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 15),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: kButtonColor,
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.shopping_cart_checkout_outlined,
+                                    color: Colors.white,
+                                    size: 14,
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    'Masukan Keranjang',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

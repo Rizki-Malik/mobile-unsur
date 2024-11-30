@@ -1,4 +1,5 @@
 import 'package:aslab_travel/models/destination_page.dart';
+import 'package:aslab_travel/screens/detail_destination.dart';
 import 'package:aslab_travel/utils/const.dart';
 import 'package:aslab_travel/widgets/popular_destination.dart';
 import 'package:aslab_travel/widgets/rekomendasi_destination.dart';
@@ -69,7 +70,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 (index) => Padding(
                   padding: const EdgeInsets.only(right: 15),
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) =>
+                              DetailDestinasi(destination: popular[index]),
+                        ),
+                      );
+                    },
                     child: PopularDestination(
                       destination: popular[index],
                     ),
@@ -113,7 +122,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   (index) => Padding(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => DetailDestinasi(
+                                destination: rekomendasi[index]),
+                          ),
+                        );
+                      },
                       child: RekomendasiDestination(
                         destination: rekomendasi[index],
                       ),
